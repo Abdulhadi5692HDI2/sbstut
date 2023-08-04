@@ -73,24 +73,32 @@ pause
 exit
 ```
 
-<insert lost image here>
 
 `set TITLE` sets the variable `TITLE` to `My Awesome Script`
 and for the other variables so on.
 
+
 `goto :main` just jumps to the function `main`
+
 
 `:main` declares a function.
 
+
 then `title`, `color` and `echo` use the variables using the format `%variablename%`.
+
 
 looks the same, just more lines of code.
 
+
 ## Arguments!!!!!
+
 Arguments are somewhat useful and exciting!
 
+
 In Batch Script, arguments are stored in special variables (1 to 9)
+
 You can access the value of the arguments like this:
+
 ``` batch
 REM Access argument 1
 echo %1
@@ -110,17 +118,22 @@ echo %3
 
 Running the script like this:
 `C:\users\username> helloworld.bat Script 0a Hello!`
+
 should make the following result:
+
 ![Output](https://i.imgur.com/dUxVrvp.png)
 
 ## Comments
 Comments help us to outline and explain pieces of code.
+
 In Batch Script there's 2 ways to make comments in code.
 ``` batch
 REM this is a comment
 :: this is also a comment
 ```
+
 `REM` and `::`, the differences?
+
 the first one may cause lag if used too much.
 
 ## IF Statements
