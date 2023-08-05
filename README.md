@@ -262,3 +262,46 @@ echo Name = %realstruct[0].Name%
 echo Number = %realstruct[0].Number%
 echo Invalid bit = %realstruct[1].Invalid%
 ```
+
+## `FOR` statement
+The `FOR` statement is mainly used for looping through values or used for
+parsing files.
+
+Example: using it to list files and number them:
+``` batch
+@echo off
+REM set the file count to 1
+SET count=1
+REM for every file listed from dir /b call :c1 and add to the count
+FOR /f "tokens=*" %%G IN ('dir /b') DO (call :c1 "%%G")
+GOTO :eof
+
+:c1
+ echo %count%:%1
+ set /a count+=1
+ GOTO :eof
+```
+
+The results should look like this:
+
+![Output](https://i.imgur.com/Di1IeCv.png)
+
+Cool right (not really)
+
+## Toast notifications from Batch Files
+This requires you to have Powershell and .NET installed on your system.
+
+Here's a example:
+``` batch
+@echo off
+REM set variables for easyness
+set title=Very cool title
+set text=Very cool text
+
+REM execute the command
+powershell -Command "& {Add-Type -AssemblyName System.Windows.Forms; Add-Type -AssemblyName System.Drawing; $notify = New-Object System.Windows.Forms.NotifyIcon; $notify.Icon = [System.Drawing.SystemIcons]::Information; $notify.Visible = $true; $notify.ShowBalloonTip(0, '%title%', '%text%', [System.Windows.Forms.ToolTipIcon]::None)}"
+```
+
+The result should look like this:
+
+![Output](https://i.imgur.com/wtBoRmo.png)
