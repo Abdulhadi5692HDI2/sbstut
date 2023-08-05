@@ -1,5 +1,7 @@
 # How to make a simple Batch Script
 
+<b>Note: This page does not update instantly with the rentry page!</b>
+
 Main: [https://rentry.co/sbstut](https://rentry.co/sbstut)
 
 Mirror 2: [https://rentry.org/sbstut](https://rentry.org/sbstut)
