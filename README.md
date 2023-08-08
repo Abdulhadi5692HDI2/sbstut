@@ -91,6 +91,29 @@ then `title`, `color` and `echo` use the variables using the format `%variablena
 
 looks the same, just more lines of code.
 
+### Calling functions
+To call a function use `call`
+
+Like this:
+``` batch
+@echo off
+call :Init
+goto :Main
+
+:main
+title %TITLE%
+color %COLOR%
+echo %TEXT%
+pause
+exit
+
+:Init
+set TITLE=My Awesome Script
+set COLOR=0a
+set TEXT=Hello World!
+REM use the special eof function to end the function
+goto :eof
+```
 
 ## Arguments!!!!!
 
